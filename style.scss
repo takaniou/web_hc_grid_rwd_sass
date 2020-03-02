@@ -1,8 +1,14 @@
+// 變數
+$color-black: #333;
+$bg-color: #f8f9fa;
+
+// 全域
 * {
     padding: 0;
     margin: 0;
     font-family: Microsoft JhengHei, serif;
     box-sizing: border-box;
+    color: #ffffff;
 }
 
 // navbar
@@ -53,4 +59,109 @@ nav {
     background-image: url(./img/banner.jpg);
     background-size: cover;
     margin-top: -100px;
+    display: grid;
+    align-items: center;
+
+    div {
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            padding: 30px 0;
+        }
+    }
+}
+
+// content
+.content {
+    max-width: 1200px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+
+    * {
+        color: $color-black;
+    }
+
+    .pic {
+        grid-area: pic;
+    }
+
+    .txt {
+        grid-area: txt;
+        display: grid;
+        align-items: center;
+
+        h2 {
+            padding: 20px 0;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        a {
+            border: 1px solid $color-black;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 30px;
+            transition: 0.8s;
+
+            &:hover {
+                background-color: $color-black;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+#content-1 {
+    grid-template-areas: "pic txt";
+}
+
+#content-2 {
+    grid-template-areas: "txt pic";
+}
+
+#content-3 {
+    grid-template-areas: "pic txt";
+}
+
+
+// 圖示
+.icon-area {
+    background-color: $bg-color;
+
+    * {
+        color: $color-black;
+    }
+
+    div {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        padding: 20px 0;
+
+        div {
+            display: block;
+            text-align: center;
+
+            img {
+                display: block;
+                width: 64px;
+            }
+            span {
+                display: block;
+                padding: 10px 0;
+            }
+
+        }
+    }
 }
